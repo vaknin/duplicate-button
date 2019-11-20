@@ -56,7 +56,9 @@ function addButtons(contract){
     button.value = 'Duplicate';
 
     // Button onclick -> duplicate
-    button.addEventListener('click', () => { duplicate(contract.cloneNode(true)) });
+    button.addEventListener('click', () => {
+        duplicate(contract.cloneNode(true));
+    });
 
     // Add the button
     contract.querySelector('input[type="button"').parentElement.appendChild(button);
@@ -78,7 +80,7 @@ if (document.URL.includes('worldtravelink.com')){
 
             // No need to add the button in the contract creation screen
             let feedID = document.querySelectorAll('.col-sm-3')[0].innerText.replace(/[^0-9]/g, '');
-            if (feedID == '0'){
+            if (feedID == '0' || feedID == ''){
                 return;
             }
 
