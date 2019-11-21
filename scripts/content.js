@@ -78,13 +78,14 @@ if (document.URL.includes('worldtravelink.com')){
         // Check for opened contracts
         if (document.querySelectorAll('.account-box.account-details').length > 0){
 
+            let contracts = document.querySelectorAll('.account-box.account-details');
+
             // No need to add the button in the contract creation screen
-            let feedID = document.querySelectorAll('.col-sm-3')[0].innerText.replace(/[^0-9]/g, '');
+            let feedID = contracts[0].querySelectorAll('.col-sm-3')[0].innerText.replace(/[^0-9]/g, '');
             if (feedID == '0' || feedID == ''){
                 return;
             }
 
-            let contracts = document.querySelectorAll('.account-box.account-details');
 
             // Loop through all contracts
             for (let contract of contracts){
