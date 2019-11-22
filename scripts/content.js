@@ -1,3 +1,15 @@
+/*
+
+# Main Flow
+
+If the website the user is on is Travolutionary's B2B engine, the program will scan the webpage periodically,
+and once it finds a feed, it'll add the "Duplicate" button to the feed, using the 'addButtons' function.
+Inside this function, a button will be added to the feed's HTML element, with an onclick eventlistener of the "duplicate" function.
+The 'duplicate' function receives as parameter the original feed(that was pressed), it presses the "create new contract" button, and then copies all the values
+from the original(presses) contract, to the new(empty) contract.
+
+*/
+
 // Duplicate contract
 async function duplicate(OriginContract){
 
@@ -85,7 +97,6 @@ if (document.URL.includes('worldtravelink.com')){
             if (feedID == '0' || feedID == ''){
                 return;
             }
-
 
             // Loop through all contracts
             for (let contract of contracts){
