@@ -41,10 +41,12 @@ async function duplicate(OriginContract){
     document.querySelector('.plus-sign-label').click();
 
     // Wait for the new contract page to load
-    let feedID = document.querySelectorAll('.col-sm-3')[0].innerText.replace(/[^0-9]/g, '');
-    while(feedID != '0'){
-        await sleep(25);
-        feedID = document.querySelectorAll('.col-sm-3')[0].innerText.replace(/[^0-9]/g, '');
+    while(true){
+        await sleep(50);
+        let newContract = document.querySelector('.account-box.account-details');
+        if(newContract && newContract.querySelectorAll('.col-sm-3')[0] && newContract.querySelectorAll('.col-sm-3')[0].innerText.replace(/[^0-9]/g, '') == '0'){
+            break;
+        }
     }
     
     // The new contract to change and create
